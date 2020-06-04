@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Race</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+    <body>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="card mt-4">
+						<h5 class="card-header">Resultado da Corrida</h5>
+						<div class="card-body">
+							<form id="frmRace" method="POST" th:action="@{/race-result}" enctype="multipart/form-data">
+								<h6 class="card-title">Selecione o arquivo com o resultado e clique em enviar</h6>
+								<div class="form-group">
+									<input type="file" th:name="file" accept=".txt" id="inputLog" class="form-control">
+								</div>
+								<button type="submit" class="btn btn-primary">Enviar</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>

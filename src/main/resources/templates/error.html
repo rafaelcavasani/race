@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Custom styles for this template -->
+    <title>ProntClinic</title>
+    <link rel="shortcut icon" type="imagem/x-icon" th:href="@{/image/favicon.ico}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/fontello/css/fontello.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <script th:src="@{/js/jquery-3.3.1.min.js}" ></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/menu.js}"></script>
+</head>
+<body>
+
+    <div class="container-fluid py-5">
+        <div class="col-12 p-0 float-left pt-3 pb-5 bg-gray">
+            <div class="card w-100 shadow">
+                <div class="card-body">
+                    <div class="col-12 float-left text-center py-5 m-0">
+                        <h1 class="text-primary text-center font-size-5 mb-5"><i class="icon-warning-1"></i></h1>
+                        <h2 class="text-primary text-center mb-3">Aconteceu um erro ao carregar a página!</h2>
+                        <h4 class="text-muted text-center mb-0" th:text="${error}"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
