@@ -10,18 +10,13 @@
     <meta name="author" content="">
 
     <!-- Custom styles for this template -->
-    <title>ProntClinic</title>
-    <link rel="shortcut icon" type="imagem/x-icon" th:href="@{/image/favicon.ico}" />
+    <title>Race</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
-    <link rel="stylesheet" type="text/css" th:href="@{/fontello/css/fontello.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
-    <script th:src="@{/js/jquery-3.3.1.min.js}" ></script>
-    <script th:src="@{/js/bootstrap.min.js}"></script>
-    <script th:src="@{/js/menu.js}"></script>
 </head>
 <body>
 
-    <div class="container-fluid py-5">
+    <div class="container p-5">
         <div class="col-12 p-0 float-left pt-3 pb-5 bg-gray">
             <div class="card w-100 shadow">
                 <div class="card-body">
@@ -29,6 +24,9 @@
                         <h1 class="text-primary text-center font-size-5 mb-5"><i class="icon-warning-1"></i></h1>
                         <h2 class="text-primary text-center mb-3">Aconteceu um erro ao carregar a página!</h2>
                         <h4 class="text-muted text-center mb-0" th:text="${error}"></h4>
+                        <div class="col-12 mt-4 text-center">
+                            <a th:href="@{/}" class="btn btn-defaul btn-sm">Voltar</a>
+                        </div>
                     </div>
                 </div>
             </div>

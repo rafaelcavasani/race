@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Custom styles for this template -->
+    <title>Race</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+<div class="container-fluid p-3">
+    <div class="col-12 p-0 float-left">
+        <div class="card w-100 shadow">
+            <h6 class="card-header">Resultado da Corrida</h6>
+            <div class="card-body">
+                <div class="col-12 float-left p-0" th:if="${not #lists.isEmpty(pilotList)}">
+                    <table class="table table-sm table-responsive-sm border table-hover">
+                        <thead>
+                        <tr>
+                            <th>Posição</th>
+                            <th>Cóodigo</th>
+                            <th>Piloto</th>
+                            <th>Qtdade Voltas</th>
+                            <th>Tempo de Prova</th>
+                            <th>Melhor Volta</th>
+                            <th>Pior Volta</th>
+                            <th>Velocidade Média</th>
+                            <th>Diferença do 1º Colocado</th>
+                            <th>Melhor Volta da Corrida</th>
+                            <th>Prova Concluída</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="pilot : ${pilotList}">
+                                <td th:text="${pilot.position != null} ? ${pilot.position} : '-'" ></td>
+                                <td th:text="${pilot.number}"></td>
+                                <td th:text="${pilot.name}"></td>
+                                <td th:text="${pilot.lapCount}"></td>
+                                <td th:text="${pilot.raceTime}"></td>
+                                <td th:text="${pilot.bestLap}"></td>
+                                <td th:text="${pilot.worstLap}"></td>
+                                <td th:text="${#numbers.formatDecimal(pilot.meanSpeed, 0, 'POINT', 2, 'COMMA')}"></td>
+                                <td th:text="${pilot.position == 1 || pilot.raceFinished == false} ? '--:--' : ${pilot.diffToFirstPosition}"></td>
+                                <td th:text="${pilot.bestRaceLap}"></td>
+                                <td th:text="${pilot.raceFinished == true} ? 'Sim' : 'Não'"></td>
+                            </tr>
+                            <tr th:if="${#lists.isEmpty(pilotList)}">
+                                <td colspan="3">Nenhum resultado encontrado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-12 mt-4 text-center">
+                        <a th:href="@{/}" class="btn btn-defaul btn-sm">Início</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

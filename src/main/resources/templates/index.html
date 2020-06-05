@@ -10,24 +10,22 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
 </head>
-    <body>
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="card mt-4">
-						<h5 class="card-header">Resultado da Corrida</h5>
-						<div class="card-body">
-							<form id="frmRace" method="POST" th:action="@{/race-result}" enctype="multipart/form-data">
-								<h6 class="card-title">Selecione o arquivo com o resultado e clique em enviar</h6>
-								<div class="form-group">
-									<input type="file" th:name="file" accept=".txt" id="inputLog" class="form-control">
-								</div>
-								<button type="submit" class="btn btn-primary">Enviar</button>
-							</form>
+<body>
+	<div class="container p-5">
+		<div class="col-12 p-0 float-left pt-3 pb-5 bg-gray">
+			<div class="card w-100 shadow">
+				<h6 class="card-header">Resultado da Corrida</h6>
+				<div class="card-body">
+					<form id="frmRace" method="POST" th:action="@{/race-result}" enctype="multipart/form-data">
+						<div class="form-group">
+							<label>Selecione o arquivo com o resultado e clique em enviar</label>
+							<input type="file" th:name="file" accept=".txt" id="inputLog" class="form-control">
 						</div>
-					</div>
+						<button type="submit" class="btn btn-primary float-right">Enviar</button>
+					</form>
 				</div>
 			</div>
 		</div>
-    </body>
+	</div>
+</body>
 </html>

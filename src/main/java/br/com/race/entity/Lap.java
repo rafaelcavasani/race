@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalTime;
 
-public class Lap implements Comparable<Lap> {
+public final class Lap implements Comparable<Lap> {
 
     private LocalTime time;
     private Pilot pilot;

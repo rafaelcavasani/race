@@ -1,8 +1,10 @@
 package br.com.race.entity;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.time.LocalTime;
 
-public class Pilot {
+public class Pilot implements Comparable<Pilot> {
     private Long number;
     private String name;
     private Long lapCount;
@@ -12,6 +14,9 @@ public class Pilot {
     private Double meanSpeed;
     private LocalTime lastLapTime;
     private LocalTime raceTime;
+    private LocalTime diffToFirstPosition;
+    private Boolean raceFinished;
+    private LocalTime bestRaceLap;
 
     public Pilot(Long number, String name) {
         this.number = number;
@@ -88,5 +93,34 @@ public class Pilot {
 
     public void setRaceTime(LocalTime raceTime) {
         this.raceTime = raceTime;
+    }
+
+    public LocalTime getDiffToFirstPosition() {
+        return diffToFirstPosition;
+    }
+
+    public void setDiffToFirstPosition(LocalTime diffToFirstPosition) {
+        this.diffToFirstPosition = diffToFirstPosition;
+    }
+
+    public Boolean getRaceFinished() {
+        return raceFinished;
+    }
+
+    public void setRaceFinished(Boolean raceFinished) {
+        this.raceFinished = raceFinished;
+    }
+
+    public LocalTime getBestRaceLap() {
+        return bestRaceLap;
+    }
+
+    public void setBestRaceLap(LocalTime bestRaceLap) {
+        this.bestRaceLap = bestRaceLap;
+    }
+
+    @Override
+    public int compareTo(@NotNull Pilot pilot) {
+        return getLastLapTime().compareTo(pilot.getLastLapTime());
     }
 }
