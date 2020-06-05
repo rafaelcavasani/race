@@ -1,6 +1,6 @@
 # Informações sobre o Código
 
-O sistema foi feito em java e foi utilizado o SpringBoot, SpringMVC e Thymeleaf.
+O sistema foi desenvolvido em java e foi utilizado o SpringBoot, SpringMVC e Thymeleaf.
 
 Os arquivos java estão divididos em 3 partes:
 
@@ -10,8 +10,8 @@ Os arquivos java estão divididos em 3 partes:
   * Diretório reservado para as classes de serviços e lógica de negócio do sistema.
 3. controller:
   * Diretório reservado para classes de controle e endpoints.
-
-
+  
+  
 # Informações sobre o Sistema
 
 Sistema para classificação e resultados de uma corrida, através de um arquivo txt.
